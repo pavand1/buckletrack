@@ -1,0 +1,113 @@
+@import "../../styles/globalSass/variable.scss";
+
+.container {
+    padding: 6rem 3rem;
+    text-align: center;
+    display: flex;
+    @media screen and (max-width: $media-mobile) {
+        padding: 2rem 1rem;
+    }
+}
+
+.form {
+    width: 40%;
+    margin: auto;
+    background-color: $clr-root;
+    padding: 2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+
+    .heading{
+      font-size: 2rem;
+      color:$clr-base;
+      text-align: left;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      font-family: $font-semiBold;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: $media-xs) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: $media-mobile) {
+        width: 50%;
+    }
+    .formGroup {
+      margin-bottom: 2.5rem;
+      @media (max-width: 768px) {
+        margin-bottom: 1rem;
+      }
+      input {
+        padding: 1.2rem;
+        font-size: 1.5rem;
+        width: 100%;
+        background-color: #F1F1F1;
+        color: #727272;
+        @media (max-width: 768px) {
+          padding: 1rem;
+          font-size: 1rem;
+        }
+      }
+      label {
+        text-align: left;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .formGroupNew{
+      width: 46%;
+      float: left;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      @media (max-width: 768px) {
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &:last-of-type{
+        width:96%;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .submitButton {
+      padding: 1.2rem;
+      font-size: 1.4rem;    
+      background-color: $clr-secondary;
+      color: $clr-root;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 2rem;
+      display: block;
+      width:96%;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      @media (max-width: 768px) {
+        margin-bottom: 1rem;
+        width:100%;
+        margin-left: 0rem;
+        margin-right: 0rem;
+      }
+
+      &:hover {
+        background-color: $clr-primary;
+      }
+    }
+    .error {
+      color: $clr-secondary;
+      font-size: 1.2rem;
+      padding: 1.2rem;
+      position: absolute;
+      bottom: 0;
+      @media (max-width: 768px) {
+        padding-left: 0;
+      }
+    }
+  }

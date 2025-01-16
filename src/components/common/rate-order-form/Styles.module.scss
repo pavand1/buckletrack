@@ -1,0 +1,233 @@
+@import "../../../styles/globalSass/variable.scss";
+.container {
+  box-shadow: 9px 10px 8.7px -3px #00000040;
+  background: #042f7c;
+  max-width: 500px;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  opacity: 0px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .heading {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+
+    .order {
+      flex: 1;
+      top: 221px;
+      left: 916px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: $font-regular;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 25.5px;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem;
+    }
+    .calculator {
+      flex: 1;
+      top: 219px;
+      left: 1267px;
+      gap: 0px;
+      font-family: $font-regular;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 25.5px;
+      text-align: center;
+      padding: 1rem;
+      color: #ffffff;
+    }
+    .activeOrder {
+      border-radius: 10px 0px 0px 0px;
+      opacity: 0px;
+      background: #ef4136;
+    }
+    .activeCalculator {
+      border-radius: 0px 10px 0px 0px;
+      opacity: 0px;
+      background: #ffffff;
+      color: #000000;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .radio {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+
+      div {
+        float: left;
+        margin: 0 5px 0 0;
+        width: 100px;
+        height: 40px;
+        position: relative;
+      }
+
+      label,
+      input {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+      }
+      input[type="radio"] {
+        opacity: 0.01;
+        z-index: 100;
+      }
+
+      input[type="radio"]:checked + label,
+      .Checked + label {
+        background: #ef4136;
+      }
+      label {
+        padding: 12px;
+        // border: 1px solid #ccc;
+        cursor: pointer;
+        z-index: 90;
+        gap: 0px;
+        border-radius: 7px;
+        opacity: 0px;
+        background: #ffffff;
+        font-family: $font-regular;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+
+      label:hover {
+        background: #ddd;
+      }
+    }
+    .mobile {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+
+      .textBox {
+        width: 70%;
+        border-radius: 7px;
+        border: 1px;
+        opacity: 0px;
+        padding: 1rem 2rem;
+        font-family: $font-regular;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      .button {
+        width: 30%;
+        border-radius: 7px;
+        opacity: 0px;
+        background: #ffffff;
+        padding: 1rem 2rem;
+        font-family: $font-regular;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        cursor: pointer;
+      }
+      ::placeholder {
+        color: #000000;
+      }
+    }
+
+    .row {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+
+      .textBox {
+        width: 50%;
+        border-radius: 7px;
+        border: 1px;
+        opacity: 0px;
+        padding: 1rem 2rem;
+        font-family: $font-regular;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      button {
+        border-radius: 7px;
+        opacity: 0px;
+        background: #ffffff;
+        padding: 1rem 2rem;
+        font-family: $font-regular;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #042f7c;
+      }
+      .orderNoText {
+        width: 100%;
+        border-radius: 7px;
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+        padding: 1rem 2rem;
+        font-family: $font-regular;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      .orderNoButton {
+        width: 100%;
+        border-radius: 7px;
+        opacity: 0px;
+        text-align: center;
+        background: #ef4136;
+        color: white;
+        font-family: $font-regular;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      ::placeholder {
+        color: #000000;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .container{
+padding: 1.5rem;
+  }
+}

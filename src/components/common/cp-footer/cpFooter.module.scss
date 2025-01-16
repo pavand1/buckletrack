@@ -1,0 +1,152 @@
+@import "../../../styles/globalSass/variable.scss";
+.footer {
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 5rem 50rem 5rem;
+  background-image: url("../../images/footer/footernew.png"); // Ensure this path is correct
+  background-size: cover;
+  background-position: center;
+  //height: 100vh;
+  color: #fff;
+  @media (max-width: 768px) {
+    padding: 2rem;
+    height: auto;
+    background-image: url("../../images/footer/footer-mobile.png"); // Ensure this path is correct
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.column {
+  flex: 1 1 200px;
+  margin-bottom: 2rem;
+  text-align: justify;
+
+  .footerHeading {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
+    text-align: left; /* Align headings to the left on all screens */
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+      .item {
+        color: $clr-root;
+        font-size: 1.6rem;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+.socialColumn {
+  .socialHeading {
+    text-align: left; /* Ensure the "Follow Us" heading is aligned to the left */
+    margin-bottom: 3rem;
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  .socialIcons {
+    justify-content: flex-start; /* Align social icons to the left */
+  }
+}
+
+.logo {
+  max-width: 18rem;
+  margin-bottom: 4rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 10px;
+
+  a {
+    display: inline-block;
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.contactInfo {
+  .contactItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+
+    img {
+      width: 2rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      object-fit: contain;
+      top: 0;
+      position: absolute;
+    }
+
+    span {
+      font-size: 1.6rem;
+      width: 80%;
+      padding-left: 4rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .column {
+    flex: 1 1 100%;
+    margin-bottom: 15px;
+    text-align: left; /* Ensure column content aligns to the left on mobile */
+
+    ul {
+      padding-left: 0; /* Remove any padding on the left side of the list */
+    }
+  }
+}
+
+.copyRight {
+  position: relative;
+  width: 100%;
+  .text {
+    color: $clr-root;
+    position: absolute;
+    bottom: 0rem;
+    font-family: $font-medium;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.sectionbg {
+  .bgImg {
+    position: relative;
+    z-index: -1;
+    .imageWrap {
+      margin-top: -12rem;
+      .imageBg {
+        width: 100%;
+      }
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

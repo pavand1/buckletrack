@@ -1,0 +1,181 @@
+@import '../../styles/globalSass/variable.scss';
+.section{
+  padding: 4rem 8rem;
+  margin: 0rem 0rem;
+  background-color: $clr-primary;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+    margin: 2rem 0rem 0rem 0rem;
+  }
+  .mainHeading {
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    color: $clr-base;
+    font-family: $font-bold;
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    color:$clr-root;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap:0rem;
+    }
+  }
+
+  .column {
+    flex: 1;
+    padding: 0rem;
+
+    &:first-of-type {
+      text-align: left;
+      height: 41.1rem;
+      @media (max-width: 768px) {
+        display: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+    }
+
+    &:last-of-type {
+      text-align: center;
+    }
+  }
+
+  .description {
+    p {
+      margin: 0 0 6rem;
+      text-align: justify;
+      @media (max-width: 768px) {
+        margin: 0 0 2rem;
+      }
+    }
+
+    .readMoreButton {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    position: relative;
+    min-height: 41.1rem;
+    @media (max-width: 768px) {
+      order: -1;
+      top: 0rem;
+      min-height: auto;
+    }
+  }
+  .form {
+    // display: flex;
+    // flex-direction: column;
+    background-color: $clr-root;  // Set the form background to white
+    padding: 2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);  // Optional: Add shadow for depth
+
+    .heading{
+      font-size: 2rem;
+      color:$clr-base;
+      text-align: left;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      font-family: $font-semiBold;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+    .formGroup {
+      margin-bottom: 2.5rem;
+      @media (max-width: 768px) {
+        margin-bottom: 1rem;
+      }
+      input,
+      textarea {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+        width: 100%;
+        background-color: #F1F1F1;  // Set input field background to grey
+        color: #727272;  // Set text color to dark grey
+        @media (max-width: 768px) {
+          padding: 1rem;
+          font-size: 1rem;
+        }
+      }
+
+      textarea {
+        resize: vertical;  // Allow textarea to be resized vertically only
+      }
+    }
+    .formGroupNew{
+      width: 46%;
+      float: left;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        width: 45%;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &:last-of-type{
+        width:96%;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .submitButton {
+      padding: 1.2rem;
+      font-size: 1.4rem;    
+      background-color: $clr-secondary;
+      color: $clr-root;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 2rem;
+      display: block;
+      width:96%;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      @media (max-width: 768px) {
+        margin-bottom: 0rem;
+        width:100%;
+        margin-left: 0rem;
+        margin-right: 0rem;
+      }
+
+      &:hover {
+        background-color: $clr-primary;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    .error {
+      color: $clr-secondary;
+      font-size: 1.2rem;
+    }
+  }
+}

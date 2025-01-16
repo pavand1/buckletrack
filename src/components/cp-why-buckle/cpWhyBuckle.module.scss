@@ -1,0 +1,126 @@
+@import '../../styles/globalSass/variable.scss';
+
+.section {
+  padding: 4rem 8rem;
+  margin: 0rem 0rem 0rem 0rem;
+  @media (max-width: 768px) {
+    padding: 0rem 2rem;
+    margin: 2rem 0rem 63rem 0rem;
+    background-color: #ededed;
+  }
+  .mainHeading{
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    color:$clr-base;
+    font-family: $font-bold;
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .backlet {
+    display: flex;
+    flex-wrap: wrap;
+    .column1 {
+      flex: 1;
+      padding: 0rem;
+      color: #000; /* Black text color for the heading section */
+      @media (max-width: 768px) {
+        padding: 3rem 0rem;
+      }
+      .headingContainer {
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 10px;
+  
+        .headingItem {
+          // flex: 1 1 30%; /* Each heading takes up about 30% of the width, with gaps */
+          margin-bottom: 0px;
+          text-align: left;
+          padding: 0rem 2rem;
+          width: 20%;
+          border-right: 0.2rem solid #000;
+          @media (max-width: 768px) {
+            padding: 1rem;
+            border-right:0rem;
+          }
+          .heading {
+            display: inline;
+            font-size: 2.2rem;
+            line-height: 2.8rem;
+            font-family: $font-medium;
+            text-transform: capitalize;
+            color:$clr-primary;
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
+          }
+          &::first-letter {
+            color: $clr-primary;
+            font-size: 2.8rem; /* Larger font size for the first letter */
+            font-weight: bold; /* Make the first letter bold */
+            @media (max-width: 768px) {
+              font-size: 2.2rem;
+            }
+          }
+          &:nth-child(5) {
+            border-right: none;
+          }
+        }
+      }
+    }
+  
+    .column2 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      h3 {
+        color: #fff; /* White text color for the heading */
+        margin-bottom: 10px;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .trackimg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-bottom: 3rem;
+        @media (max-width: 768px) {
+          position: relative;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+  
+      .column1, .column2 {
+        width: 100%;
+      }
+  
+      .column2 {
+        order: -1; /* Display image section first on mobile */
+      }
+  
+      .headingContainer {
+        .headingItem {
+          flex: 1 1 100%; /* Full width for each heading item on small screens */
+          text-align: left;
+        }
+      }
+    }
+    .sectionHeading{
+      font-size: 4rem;
+      color: $clr-base;
+      margin: 5rem 0rem;
+      display: block;
+    }
+  }
+}
+

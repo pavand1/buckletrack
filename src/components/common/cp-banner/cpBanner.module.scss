@@ -1,0 +1,149 @@
+@import '../../../styles/globalSass/variable.scss';
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 8rem 20rem 8rem;
+    background-image: url('../../images/Home/banner/bgbanner.png');  // Ensure this path is correct
+    background-size: cover;
+    background-position: center;
+    // height: 100vh;
+    color: $clr-root;
+    gap:25rem;
+    background-repeat: no-repeat;
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 2rem;
+      text-align: center;
+      height: auto;
+      gap:0rem;
+    }
+    &.sectionBanner{
+      height: 100vh;
+      @media (max-width: 768px) {
+        height: auto;
+      }
+    }
+    &.aboutBanner{
+      background-image: url('../../images/about/banner.png');
+    }
+  }
+  
+  .left {
+    flex: 1;
+    padding: 2rem;
+    text-align: left;  // Align text to the left
+    @media (max-width: 768px) {
+      text-align: center;
+      padding: 0rem;
+    }
+    .heading {
+      font-size: 4.5rem;
+      margin-bottom: 3rem;
+      font-family: $font-bold;
+      @media (max-width: 768px) {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+  
+    .subHeading {
+      font-size: 2.2rem;
+      margin-bottom: 4rem;
+      font-family: $font-regular;
+      @media (max-width: 768px) {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+    }
+  
+    .button {
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+      background-color: $clr-secondary;
+      color: $clr-root;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: $clr-primary;
+      }
+    }
+  }
+  
+  .right {
+    flex: 1;
+    padding: 2rem;
+    @media (max-width: 768px) {
+      width:100%;
+      padding: 1rem 0rem;
+    }
+  
+    .heading{
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $clr-base;
+      text-align: left;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      background-color: $clr-root;  // Set the form background to white
+      padding: 4rem;
+      box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);  // Optional: Add shadow for depth
+      @media (max-width: 768px) {
+        padding: 2rem;
+      }
+      .formGroup {
+        margin-bottom: 2.5rem;
+        @media (max-width: 768px) {
+          margin-bottom: 1rem;
+        }
+  
+        input,
+        textarea {
+          padding: 1.2rem;
+          font-size: 1.2rem;
+          width: 100%;
+          background-color: #F1F1F1;  // Set input field background to grey
+          color: #727272;  // Set text color to dark grey
+          @media (max-width: 768px) {
+            padding: 1rem;
+            font-size: 1rem;
+          }
+        }
+  
+        textarea {
+          resize: vertical;  // Allow textarea to be resized vertically only
+        }
+      }
+  
+      .submitButton {
+        padding: 1.2rem;
+        font-size: 1.4rem;    
+        background-color: $clr-secondary;
+        color: $clr-root;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 2rem;
+  
+        &:hover {
+          background-color: $clr-primary;
+        }
+  
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+      .error {
+        color: $clr-secondary;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  

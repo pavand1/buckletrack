@@ -1,0 +1,68 @@
+@import '../../styles/globalSass/variable.scss';
+.section{
+  padding: 8rem 8rem 0rem 8rem;
+  background-color: #eeeeee;;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem 0rem 2rem;
+    margin: 2rem 0rem 0rem 0rem;
+  }
+  .mainHeading {
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    color: $clr-base;
+    font-family: $font-bold;
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:6rem;
+    color:$clr-root;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      gap:0rem;
+    }
+  }
+
+  .column {
+    flex: 1;
+
+    &:first-of-type {
+      text-align: left;
+
+      @media (max-width: 768px) {
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+    }
+
+    &:last-of-type {
+      text-align: center;
+    }
+  }
+
+  .description {
+    p {
+      margin: 0 0 3rem;
+      text-align: justify;
+      @media (max-width: 768px) {
+        margin: 0 0 2rem;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+
+    @media (max-width: 768px) {
+      order: -1;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+@import "../../styles/globalSass/variable.scss";
+.section {
+  padding: 8rem 8rem 2rem 8rem;
+  padding: 8rem 8rem;
+  margin: 0rem 0rem 0rem 0rem;
+  background: url('../../images/Home/whyBanner.png');  // Ensure this path is correct
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(241, 241, 241, 0) 0%,
+  //   rgba(241, 241, 241, 0.435069) 40.27%,
+  //   #f1f1f1 74.51%
+  // );
+  @media (max-width: 768px) {
+    padding: 2rem 2rem 0rem 2rem;
+    margin: 20rem 0rem 0rem 0rem;
+  }
+  .mainHeading {
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    color: $clr-primary;
+    font-family: $font-bold;
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      margin-top: 44rem;
+    }
+  }
+  .imageTop {
+    // padding:0rem 0rem 18rem 0rem;
+    // background-image: url('../../images/Home/whyBanner.png');  // Ensure this path is correct
+    // background-size: cover;
+    // background-position: bottom center;
+    // background-repeat: no-repeat;
+  }
+  .counterContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 columns
+    gap: 20px; // Space between items
+    margin: 20px auto;
+    padding-top: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    .counterContainer {
+      grid-template-columns: repeat(2, 2fr) !important; // 2 columns for tablets
+    }
+    .counterImage {
+      width: 6rem !important;
+      height: 6rem !important;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .counterContainer {
+      grid-template-columns: 1fr; // 1 column for mobile
+    }
+  }
+
+  .counterItem {
+    border-right: 2px solid #000000;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    &:last-child {
+      border: none;
+    }
+    // &:hover {
+    //   transform: scale(1.05);
+    // }
+
+    .counterImage {
+      width: 9rem;
+      height: 9rem;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .counterInfo {
+      margin-top: 15px;
+    }
+
+    .counterTitle {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      font-family: $font-bold;
+      text-align: center;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: $clr-primary;
+
+      .counterBtn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        margin: 0 5px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      .count {
+        font-size: 3.2rem;
+        line-height: 4rem;
+        margin: 0 10px;
+      }
+    }
+    .shortBorder {
+      border: 1px solid #000000;
+      width: 7rem;
+      margin: 0 auto;
+    }
+
+    .description {
+      margin-top: 2rem;
+      font-size: 2.2rem;
+      line-height: 2.4rem;
+      color: $clr-base;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  
+  .counterItem {
+    border-right: 0px solid #000000 !important;
+    padding: 0px !important;
+    text-align: center !important;
+    transition: transform 0.3s ease;
+    }
+    .count {
+      font-size: 2.4rem !important;
+      line-height: 3.4rem !important;
+      margin: 0 2px !important;
+    }
+    .description {
+      margin-top: 1.5rem !important;
+      font-size: 1.6rem !important;
+      line-height: 2.4rem !important;
+      color: $clr-base;
+    }
+  }

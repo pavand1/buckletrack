@@ -1,0 +1,87 @@
+@import '../../styles/globalSass/variable.scss';
+.section{
+  padding: 8rem 8rem;
+  margin: 0rem 0rem 0rem 0rem;
+  background-image: url('../../images/Home/Doodle Background-1.svg');  // Ensure this path is correct
+  background-size: cover;
+  background-position: center;
+  color: $clr-root;
+  gap:25rem;
+  background-repeat: no-repeat;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+    margin: 2rem 0rem 0rem 0rem;
+  }
+  .mainHeading {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    color: $clr-base;
+    font-family: $font-bold;
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .sliderContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiperImage{
+    width: 20rem;
+    height: 6.5rem;
+    object-fit: contain;
+  }
+
+  .testimonial {
+    width: 23rem;
+    background-color: #ffffff;
+    padding: 1.8rem;
+    text-align: center;
+    height: 10rem;
+    object-fit: cover;
+    border: 1px solid #dddddd;
+    display: flex;
+  }
+
+  .feedback {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  .client {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000; /* Customize arrow colors */
+  }
+ /* Customize bullet color */
+.swiper-pagination-bullet {
+  background-color: #ff0000 !important; /* Replace with your desired color */
+}
+
+/* Change active bullet color */
+.swiper-pagination-bullet-active {
+  background-color: #00ff00 !important; /* Replace with your desired active color */
+}
+
+/* Customize arrow color */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0000ff !important; /* Replace with your desired color */
+}
+}

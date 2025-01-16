@@ -1,0 +1,88 @@
+@import '../globalSass/variable.scss';
+
+.btn-default {
+  margin: 0rem;
+  padding: 1.6rem 1.2rem;
+  font-family: $font-medium;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  background-color: $clr-secondary;
+  color: $clr-root;
+  border: 1px solid $clr-secondary;
+  border-radius: 0rem;
+  transition: all 0.5s ease-in-out;
+  text-transform: capitalize;
+  text-align: center;
+  min-width: 16rem;
+  display: inline-block;
+
+  @media only screen and (max-width: $media-mobile) {
+    padding: 1.6rem;
+    @include border-radius(0rem);
+  }
+
+  &.anc-default {
+    display: inline-block;
+  }
+
+  &:hover {
+    background-color: $clr-root;
+    color: $clr-primary;
+  }
+
+  &.typ-secondary {
+    background-color: $clr-root;
+    color: $clr-primary;
+
+    &:hover {
+      background-color: $clr-primary;
+      color: $clr-root;
+    }
+  }
+
+  & + .btn-default {
+    margin: 0;
+
+    @media only screen and (max-width: $media-mobile) {
+      margin-top: 1.8rem;
+    }
+  }
+
+  &:disabled,
+  &.btn-disable {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover {
+      background-color: $clr-primary;
+      color: $clr-root;
+      border: 1px solid $clr-primary;
+    }
+  }
+  &.btn-default-disable {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    &:hover {
+      background-color: $clr-root;
+      color: $clr-primary;
+      border: 1px solid $clr-primary;
+    }
+  }
+}
+
+.btn-link {
+  margin: 0rem;
+  font-family: $font-bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $clr-primary;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  &.btn-link-hide {
+    display: none;
+  }
+}

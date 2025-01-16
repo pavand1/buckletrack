@@ -1,0 +1,115 @@
+@import '../../styles/globalSass/variable.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure columns stretch to the full height */
+  height: 100vh; /* Full viewport height */
+  padding: 0; /* Remove padding for end-to-end effect */
+  margin: 0; /* Remove margin for end-to-end effect */
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full height for all columns */
+}
+
+.firstColumn,
+.lastColumn {
+  width: 25%; /* First column width */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Full height */
+}
+
+.lastColumn {
+  width: 35%; /* Last column width */
+}
+
+.centerColumn {
+  width: 40%; /* Center column width */
+  background-color: $clr-primary;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width */
+  height: 100%; /* Full height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainHeading{
+  font-size: 4rem;
+  margin-bottom: 8rem;
+  color:$clr-root;
+  font-family: $font-bold;
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding: 4rem 15rem 4rem 5rem;
+  margin: 0;
+  text-align: left;
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    padding: 4rem 12rem 4rem 5rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0rem;
+  }
+}
+
+.listItem {
+  position: relative;
+  padding-left: 8rem; /* Space for custom bullet */
+  padding-bottom: 2.5rem;
+  font-size: 2.2rem;
+  @media (max-width: 768px) {
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+}
+
+.listItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* Align the bullet to the top */
+  width: 20px; /* Bullet width */
+  height: 20px; /* Bullet height */
+  background-color: white; /* Bullet color */
+  border-radius: 50%;
+}
+.listItem::after {
+  content: '';
+  position: absolute;
+  left: 10px; /* Position the line right next to the bullet */
+  top: 20px; /* Start the line just below the bullet */
+  bottom: 0; /* Extend to the bottom of the item */
+  border-left: 2px dashed white; /* Dashed border */
+  width: 0;
+}
+.listItem:last-child::after {
+  border-left: none;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto; /* Adjust height for stacked layout */
+  }
+
+  .firstColumn,
+  .lastColumn,
+  .centerColumn {
+    width: 100%;
+    height: auto; /* Adjust height for stacked layout */
+    margin-bottom: 0px; /* Spacing between columns on small screens */
+  }
+}

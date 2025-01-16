@@ -1,0 +1,357 @@
+@import "../../../styles/globalSass/variable.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $clr-primary;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: -1px 1px 6px #ccc;
+
+  .headerLogo {
+    position: absolute;
+    left: 12rem;
+    top: 14rem;
+    cursor: pointer;
+    @media (min-width: 780px) {
+      left: 6rem;
+      top: 22rem;
+    }
+    @media (min-width: 1080px) {
+      left: 10rem;
+      top: 22rem;
+    }
+    @media (min-width: 1280px) {
+      left: 14rem;
+      top: 24rem;
+    }
+    @media (min-width: 1360px) {
+      left: 20rem;
+      top: 26rem;
+    }
+    @media (min-width: 1440px) {
+      left: 20rem;
+      top: 28rem;
+    }
+    @media (min-width: 1680px) {
+      left: 22rem;
+      top: 30rem;
+    }
+    @media (min-width: 1780px) {
+      left: 32rem;
+      top: 32rem;
+    }
+  }
+
+  .logo {
+    width: 33rem;
+    background-color: $clr-root;
+    padding: 0rem 2rem;
+    clip-path: polygon(0 0, 85% 0%, 100% 100%, 0% 100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; // Initially hidden
+    transform: translateY(-100px); // Initially hidden by translating upward
+
+    &.showLogo {
+      opacity: 1;
+      transform: translateY(0); // Logo will slide in from above
+    }
+  }
+
+  .menuList {
+    display: flex;
+    flex-direction: row;
+    // justify-content: center; // Initially center the menu
+    position: static;
+    width: 100%;
+    text-align: left;
+    align-items: center;
+    background-color: $clr-primary;
+    transition: justify-content 0.3s ease; // Smooth transition on scroll
+    @media (max-width: 769px) {
+      justify-content: space-between;
+    }
+    // When the menu should be right aligned (scroll event)
+    &.rightAlign {
+      justify-content: space-between; // Align menu to the right when scrolled past 100px
+    }
+    .logoPlaceholder {
+      width: 15%;
+      height: 12rem;
+      background: white;
+    }
+    .actionItems {
+      display: flex;
+      gap: 1.5rem;
+      flex-direction: column;
+      padding: 1.5rem;
+      @media (max-width: 769px) {
+        align-items: flex-end;
+      }
+
+      div {
+        display: flex;
+      }
+
+      .social {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5rem;
+
+        .circle {
+          height: 3.5rem;
+          width: 3.5rem;
+          background: white;
+          border-radius: 50%;
+          padding: 0.75rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .menu {
+    display: flex; // Ensure it uses flex to align items
+    flex-grow: 1; // Allow the menu to take up remaining space
+    justify-content: center; // Center the menu items initially
+    position: relative;
+    @media (max-width: 769px) {
+      display: none;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row; // Horizontal layout for items
+      gap: 1.6rem; // Ensure space between items
+      align-items: center;
+      @media (max-width: 769px) {
+        flex-direction: column;
+        padding-top: 1.25rem;
+        background: #ef4136;
+      }
+
+      li {
+        position: relative;
+        text-align: left;
+        padding: 1.5rem 0;
+        @media (max-width: 769px) {
+          float: left;
+          width: 100%;
+          padding: 0;
+        }
+        &.active {
+          a {
+            font-family: $font-bold;
+          }
+        }
+        a {
+          color: $clr-root;
+          text-decoration: none;
+          display: block;
+          padding: 1rem 2rem;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &.dropdown {
+          cursor: pointer;
+
+          .dropdownMenu {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            background-color: $clr-primary;
+            padding: 0;
+            list-style: none;
+            width: 20rem; // Ensure better width for dropdown
+            margin-top: 0rem;
+
+            li {
+              padding: 1rem 1rem; // Padding for dropdown items
+
+              a {
+                color: $clr-root;
+                text-decoration: none;
+                font-size: 1.4rem;
+                padding: 0rem 1rem;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+
+          &.active .dropdownMenu {
+            max-height: 50rem; // Adjust based on content
+            opacity: 1;
+            padding: 0.5rem 0;
+          }
+        }
+      }
+    }
+
+    &.open {
+      display: flex; // Show menu on mobile
+      flex-direction: column;
+      position: absolute;
+      top: 12.75rem;
+      left: 0;
+      width: 100%;
+      background-color: $clr-primary;
+      text-align: center;
+
+      ul {
+        width: 100%;
+      }
+
+      .dropdownMenu {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    @media (min-width: 769px) {
+      // Desktop view - Flex row for menu items
+      flex-direction: row; // Layout items horizontally
+      justify-content: center; // Initially center the menu on desktop
+      position: static;
+      width: auto;
+      text-align: left;
+      align-items: center;
+
+      ul {
+        flex-direction: row; // Horizontal layout
+        gap: 1.6rem; // Ensure consistent spacing
+      }
+
+      li {
+        padding: 0;
+
+        &.dropdown .dropdownMenu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: none;
+          background-color: #444;
+          width: 20rem;
+        }
+
+        &:hover .dropdownMenu {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .search {
+    display: none;
+    position: relative;
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      padding: 0;
+      margin: 0;
+
+      svg {
+        width: 2.2rem;
+        height: 2.3rem;
+        color: $clr-secondary;
+      }
+    }
+
+    @media (min-width: 769px) {
+      display: block;
+    }
+  }
+  .loginButton {
+    display: none;
+    padding: 0.5rem 1.5rem;
+    background-color: $clr-root;
+    color: #ef4136;
+    border: none;
+    cursor: pointer;
+    margin-right: 2rem;
+    border-radius: 1rem;
+    width: 12rem;
+
+    &:hover {
+      background-color: #e7e1e1;
+    }
+
+    @media (min-width: 769px) {
+      display: block;
+    }
+  }
+  .signupButton {
+    display: none;
+    padding: 0.5rem 1.5rem;
+    background: #ef4136;
+    width: 16rem;
+    color: $clr-root;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+
+    &:hover {
+      background-color: #ff3300;
+    }
+
+    @media (min-width: 769px) {
+      display: block;
+    }
+  }
+  .menuToggle {
+    display: none;
+    @media (max-width: 769px) {
+      display: block;
+      flex-direction: column;
+      cursor: pointer;
+      max-height: 30px;
+
+      span {
+        background: #ffffff;
+        height: 0.2rem;
+        width: 2.5rem;
+        margin: 0.4rem 0;
+      }
+      .closeButton {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 34px;
+        font-weight: bold;
+        color: #ffffff;
+        height: 50px;
+        flex-direction: row;
+        position: inherit;
+        left: 13rem;
+        top: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    .mobileLogo {
+      width: 44.5% !important;
+    }
+  }
+  .headerLogo {
+    display: none;
+  }
+  .logoPlaceholder {
+    width: 45% !important;
+    height: 12.8rem !important;
+  }
+}

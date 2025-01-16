@@ -1,0 +1,90 @@
+@import '../../styles/globalSass/variable.scss';
+.section{
+  padding: 8rem 8rem 8rem 8rem;
+  background-image: url('../../images/about/bgImg.png');  // Ensure this path is correct
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+  .mainHeading {
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    color: $clr-root;
+    font-family: $font-bold;
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap:6rem;
+    color:$clr-root;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      gap:0rem;
+    }
+  }
+
+  .column {
+    flex: 1;
+    background-color: $clr-secondary;
+    position: relative;
+    border-radius: 0rem 10rem 0rem 0rem;
+    @media (max-width: 768px) {
+      border-radius: 0rem 5rem 0rem 0rem;
+      margin-bottom: 2rem;
+    }
+    &:first-of-type {
+      text-align: left;
+      @media (max-width: 768px) {
+        padding-right: 0rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    &:last-of-type {
+      text-align: left;
+    }
+  }
+
+  .description {
+    padding: 8rem 5rem 0rem 5rem;
+    @media (max-width: 768px) {
+      padding: 3rem;
+    }
+    .heading{
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      font-family: $font-bold;
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    p {
+      margin: 0 0 6rem;
+      text-align: justify;
+      color:$clr-root;
+      @media (max-width: 768px) {
+        margin: 0 0 2rem;
+      }
+    }
+  }
+
+  .image {
+    width: 22rem;
+    height: 22rem;
+    object-fit: contain;
+    @media (max-width: 768px) {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
